@@ -1,0 +1,960 @@
+{
+  "id": "2cc3771d-9910-45d3-bb2f-a7af9df66977",
+  "revision": 0,
+  "last_node_id": 68,
+  "last_link_id": 71,
+  "nodes": [
+    {
+      "id": 36,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -2398.6872615081,
+        2412.1146891480303
+      ],
+      "size": [
+        523.888341091731,
+        110.3471715504582
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss",
+        "aux_id": "pythongosssss/ComfyUI-Custom-Scripts",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "[READY] Set execute=True to run"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 61,
+      "type": "MusubiDatasetConfig",
+      "pos": [
+        -3006.0244109809837,
+        2081.9816607717903
+      ],
+      "size": [
+        524.0868545120527,
+        432.7910802165993
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "config_path",
+          "type": "STRING",
+          "links": [
+            69,
+            70
+          ]
+        },
+        {
+          "name": "config_content",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MusubiDatasetConfig",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "config_content": true,
+            "output_path": true,
+            "load_from_file": true,
+            "auto_load": true
+          }
+        }
+      },
+      "widgets_values": [
+        "[general]\nresolution = [512, 512]\ncaption_extension = \".txt\"\nbatch_size = 2\nenable_bucket = true\nbucket_no_upscale = false\n\n[[datasets]]\nimage_directory = \"G:/datasset/aryssa614\"\ncache_directory = \"G:/datasset/aryssa614/cache\"\nnum_repeats = 2\n",
+        "dataset_config.toml",
+        "",
+        false
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 38,
+      "type": "Label (rgthree)",
+      "pos": [
+        -1787.3353674709704,
+        1713.2213485829445
+      ],
+      "size": [
+        48.150001525878906,
+        25
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "VAE",
+      "properties": {
+        "fontSize": 25,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0,
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 41,
+      "type": "Label (rgthree)",
+      "pos": [
+        -2312.3614840837954,
+        1725.0698689023468
+      ],
+      "size": [
+        143.0833282470703,
+        25
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "QWEN2.5VL",
+      "properties": {
+        "fontSize": 25,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0,
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 40,
+      "type": "Label (rgthree)",
+      "pos": [
+        -2807.9119751295016,
+        1729.4281098986964
+      ],
+      "size": [
+        77.76667022705078,
+        25
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "QWEN",
+      "properties": {
+        "fontSize": 25,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0,
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 51,
+      "type": "MusubiCache",
+      "pos": [
+        -2383.273749333701,
+        2069.5724039324873
+      ],
+      "size": [
+        521.8394358796668,
+        270
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dataset_config",
+          "type": "STRING",
+          "widget": {
+            "name": "dataset_config"
+          },
+          "link": 69
+        },
+        {
+          "name": "vae_path",
+          "type": "STRING",
+          "widget": {
+            "name": "vae_path"
+          },
+          "link": 48
+        },
+        {
+          "name": "text_encoder_path",
+          "type": "STRING",
+          "widget": {
+            "name": "text_encoder_path"
+          },
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": [
+            51
+          ]
+        },
+        {
+          "name": "log",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MusubiCache",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "model_type": true,
+            "dataset_config": true,
+            "vae_path": true,
+            "text_encoder_path": true,
+            "cache_latents": true,
+            "cache_text_encoder": true,
+            "text_batch_size": true,
+            "musubi_tuner_path": true,
+            "execute": true
+          }
+        }
+      },
+      "widgets_values": [
+        "QWEN Image",
+        "dataset_config.toml",
+        "",
+        "",
+        true,
+        true,
+        16,
+        "",
+        false
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 57,
+      "type": "MusubiPromptEditor",
+      "pos": [
+        -1823.6290176049556,
+        2057.325201828492
+      ],
+      "size": [
+        497.59439286925567,
+        481.629156799429
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "file_path",
+          "type": "STRING",
+          "links": [
+            67
+          ]
+        },
+        {
+          "name": "prompt_content",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MusubiPromptEditor",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "prompt_text": true,
+            "width": true,
+            "height": true,
+            "num_frames": true,
+            "seed": true,
+            "steps": true,
+            "output_path": true,
+            "load_from_file": true,
+            "auto_load": true
+          }
+        }
+      },
+      "widgets_values": [
+        "A young woman with long, wavy, bleached blonde hair and striking blue eyes is the central subject of the selfie. She is wearing a black, plunging, button-down top with lace detailing. Her lips are puckered out in a playful expression. She is wearing a black choker and has a tattoo visible on her arm. The background is a dimly lit room with blue neon lights and a doorway.",
+        832,
+        1216,
+        1,
+        42,
+        "fixed",
+        20,
+        "./prompt_file.txt",
+        "",
+        false
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 37,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -1185.4232338989657,
+        2437.420561994561
+      ],
+      "size": [
+        467.7204013481976,
+        99.42937717797531
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 71
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss",
+        "aux_id": "pythongosssss/ComfyUI-Custom-Scripts",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "[ERROR] Training failed with code 1"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 68,
+      "type": "Note",
+      "pos": [
+        -3008.537006169085,
+        1470.0331055049887
+      ],
+      "size": [
+        783.5275374864559,
+        155.66438681442332
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "BRUH",
+      "properties": {
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "████████▄    ▄█     █▄     ▄████████ ███▄▄▄▄            ███        ▄████████    ▄████████  ▄█  ███▄▄▄▄    ▄█  ███▄▄▄▄      ▄██████▄  \n███    ███  ███     ███   ███    ███ ███▀▀▀██▄      ▀█████████▄   ███    ███   ███    ███ ███  ███▀▀▀██▄ ███  ███▀▀▀██▄   ███    ███ \n███    ███  ███     ███   ███    █▀  ███   ███         ▀███▀▀██   ███    ███   ███    ███ ███▌ ███   ███ ███▌ ███   ███   ███    █▀  \n███    ███  ███     ███  ▄███▄▄▄     ███   ███          ███   ▀  ▄███▄▄▄▄██▀   ███    ███ ███▌ ███   ███ ███▌ ███   ███  ▄███        \n███    ███  ███     ███ ▀▀███▀▀▀     ███   ███          ███     ▀▀███▀▀▀▀▀   ▀███████████ ███▌ ███   ███ ███▌ ███   ███ ▀▀███ ████▄  \n███    ███  ███     ███   ███    █▄  ███   ███          ███     ▀███████████   ███    ███ ███  ███   ███ ███  ███   ███   ███    ███ \n███  ▀ ███  ███ ▄█▄ ███   ███    ███ ███   ███          ███       ███    ███   ███    ███ ███  ███   ███ ███  ███   ███   ███    ███ \n ▀██████▀▄█  ▀███▀███▀    ██████████  ▀█   █▀          ▄████▀     ███    ███   ███    █▀  █▀    ▀█   █▀  █▀    ▀█   █▀    ████████▀  \n                                                                  ███    ███                                                         \n"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 66,
+      "type": "Note",
+      "pos": [
+        -3775.074562807994,
+        1195.8128653901308
+      ],
+      "size": [
+        742.1327826158458,
+        155.66438681442332
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "BRUH",
+      "properties": {
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        " ▄█   ▄████████    ▄████████    ▄█   ▄█▄  ▄█  ███    █▄  ▀█████████▄  \n███  ███    ███   ███    ███   ███ ▄███▀ ███  ███    ███   ███    ███ \n███▌ ███    █▀    ███    █▀    ███▐██▀   ███▌ ███    ███   ███    ███ \n███▌ ███         ▄███▄▄▄      ▄█████▀    ███▌ ███    ███  ▄███▄▄▄██▀  \n███▌ ███        ▀▀███▀▀▀     ▀▀█████▄    ███▌ ███    ███ ▀▀███▀▀▀██▄  \n███  ███    █▄    ███    █▄    ███▐██▄   ███  ███    ███   ███    ██▄ \n███  ███    ███   ███    ███   ███ ▀███▄ ███  ███    ███   ███    ███ \n█▀   ████████▀    ██████████   ███   ▀█▀ █▀   ████████▀  ▄█████████▀   BABY\n                               ▀                                      \n"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 65,
+      "type": "Note",
+      "pos": [
+        -3781.6117397167595,
+        1390.4374389220948
+      ],
+      "size": [
+        746.4388606113089,
+        1155.991705403402
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "BRUH",
+      "properties": {
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "\n\n# ❄️ IceKiub's Musubi Tuner - ComfyUI Custom Nodes\n\n**Created by IceKiub** | [Support on Patreon](https://patreon.com/IceKiub?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink)\n\n## 📦 Installation\n\n### Quick Install (Recommended)\n\n1. **Download** this `comfyui_nodes` folder to your ComfyUI custom_nodes:\n   ```bash\n   cd ComfyUI/custom_nodes\n   # Download or copy the comfyui_nodes folder here\n   # Rename it to something like: musubi_tuner\n   ```\n\n2. **Run the installer** to setup musubi-tuner dependencies:\n   \n   **Windows:**\n   ```cmd\n   cd musubi_tuner\n   install.bat\n   ```\n   \n   **Linux/Mac:**\n   ```bash\n   cd musubi_tuner\n   python install.py\n   ```\n   \n   The installer will:\n   - ✅ Check for existing musubi-tuner installation\n   - ✅ Optionally clone musubi-tuner from: https://github.com/kohya-ss/musubi-tuner.git\n   - ✅ Verify requirements and guide you through setup\n\n3. **Restart ComfyUI**\n\n### Method 1: Copy to ComfyUI custom_nodes\n1. Copy the entire musubi-tuner folder to ComfyUI:\n   ```bash\n   cp -r Z:/path/musubi-tuner \"C:/ComfyUI/custom_nodes/musubi-tuner\"\n   ```\n2. Restart ComfyUI\n3. Nodes will auto-detect the installation path\n\n### Method 3: Separate Installation with Path Configuration\nIf you keep musubi-tuner separate from ComfyUI:\n\n1. Copy only the `comfyui_nodes` folder to ComfyUI:\n   ```bash\n   cp -r musubi-tuner/comfyui_nodes \"C:/ComfyUI/custom_nodes/ComfyUI_IceKiub_Musubi\"\n   ```\n\n2. In each node, specify `musubi_tuner_path`:\n   ```\n   Z:/vidtraiing/MoUsou/musubi-tuner\n   ```\n\n3. The nodes will remember this path for future use\n\n\nIf auto-detection fails, manually specify `musubi_tuner_path` in the node.\n\n## 🎯 Available Nodes\n\n### 1. ❄️ Musubi Dataset Config\n**Purpose**: Create and configure dataset settings for training\n\n**Inputs**:\n- `config_type`: Choose between WAN Video, QWEN Image, Load from File, or Custom\n- `resolution_width/height`: Target resolution for training data\n- `caption_extension`: File extension for captions (.txt, .caption, .json)\n- `batch_size`: Batch size for training (default: 2)\n- `enable_bucket`: Allow different aspect ratios\n- `bucket_no_upscale`: Don't upscale images smaller than resolution\n- `load_from_file`: Path to existing dataset_config.toml to load\n- `dataset_1/2/3_image_dir`: Paths to your training data (supports up to 3 datasets)\n- `dataset_1/2/3_cache_dir`: Cache directories for each dataset\n- `dataset_1/2/3_num_repeats`: How many times to repeat each dataset\n- `num_frames`: (Video only) Number of frames to use\n- `frame_extraction`: (Video only) head, tail, or uniform\n- `output_path`: Where to save the config file\n\n**Outputs**:\n- `config_path`: Path to the generated config file\n- `config_content`: Preview of the TOML content\n\n**Features**:\n- **Load from File**: Select \"Load from File\" mode and specify existing config path\n- **Multiple Datasets**: Configure up to 3 different datasets in one config\n- **Auto-formatting**: Uses proper TOML format with toml library\n- **Cache Directories**: Specify separate cache folders for each dataset\n\n**Usage**: \n- To create new config: Set paths for dataset_1, optionally dataset_2 and dataset_3\n- To load existing: Set config_type to \"Load from File\", specify path in load_from_file\n- Example template provided: `comfyui_nodes/dataset_config_template.toml`\n\n### 2. ❄️ Musubi Cache (Latents & Text)\n**Purpose**: Pre-cache latents and text embeddings for faster training\n\n**Inputs**:\n- `model_type`: WAN 2.2 or QWEN Image\n- `dataset_config`: Path from Dataset Config node\n- `vae_path`: Path to VAE model\n- `t5_path`: Path to T5 text encoder\n- `cache_latents`: Whether to cache latents\n- `cache_text_encoder`: Whether to cache text embeddings\n- `text_batch_size`: Batch size for text encoding\n- `musubi_tuner_path`: (Optional) Path to musubi-tuner installation\n- `execute`: Set to True to run the caching\n\n**Outputs**:\n- `status`: Current status message\n- `log`: Detailed execution log\n\n**Usage**: Run this after creating your dataset config and before training. Caching speeds up training significantly. If you get \"Script not found\" errors, specify the `musubi_tuner_path`.\n\n### 3. ❄️ Musubi Training\n**Purpose**: Train LoRA networks with full parameter control\n\n**Inputs**:\n- `model_type`: WAN 2.2 or QWEN Image\n- `task`: Training task (t2v-A14B, t2v-B14B, i2v-A14B, i2v-B14B)\n- `dataset_config`: Path to config file\n- `vae_path`, `t5_path`, `dit_path`: Model paths\n- `output_dir`: Where to save the trained LoRA\n- `output_name`: Name for the LoRA file\n- `learning_rate`: Learning rate (default: 0.0003)\n- `network_dim`: LoRA rank (default: 32)\n- `network_alpha`: LoRA alpha (default: 32)\n- `max_train_steps`: Total training steps\n- `save_every_n_steps`: Checkpoint frequency\n- `use_high_noise`: Enable high noise training (WAN only)\n- `dit_high_noise_path`: Path to high noise model\n- `timestep_boundary`: Timestep boundary for high noise\n- `musubi_tuner_path`: (Optional) Path to musubi-tuner installation\n- `execute`: Set to True to start training\n\nWhen save state is set to true, a checkpoint of the training will be generated when we save a version as a save_state folder\nYou can resume a training by setting the path to that save_state folder\n\n**Outputs**:\n- `status`: Current status message\n- `log`: Detailed training log\n\n**Usage**: Connect dataset config and run training. Monitor the log output for progress.\n\n### 4. ❄️ ❄️ Musubi Image Viewer (Auto-Refresh)\n**Purpose**: Refreshes and displays new images in samples folder during training to monitor progress\n\n**Outputs**:\nLast training sample\n\n**Usage**: Setup before training to configure sampling. The node will automatically display the latest generated sample during training.\n\n\n## ⚙️ Advanced Features\n\n### High Noise Training (WAN 2.2)\nEnable `use_high_noise` and provide both low and high noise model paths for better quality results.\n\n### Preset Management\nThe nodes remember your last settings between sessions, making it easy to run multiple training jobs.\n\n### Real-time Monitoring\nThe Sampling node automatically refreshes to show your latest generated samples, giving you immediate feedback on training progress.\n\n## 🎛️ Training Parameters Guide\n\n### Learning Rate\n- **Default**: 0.0003\n- **Range**: 0.00001 - 0.01\n- Lower values = slower but more stable training\n- Higher values = faster but risk instability\n\n### Network Dim (LoRA Rank)\n- **Default**: 32\n- **Range**: 1 - 128\n- Higher = more expressive but slower\n- I like to start with 32, increase if needed\n\n### Network Alpha\n- **Default**: 32 (usually same as dim)\n- **Range**: 1 - 128\n- Controls LoRA weight scaling\n\n### Max Train Steps\n- **Default**: 2000 but can be done by 500\n- Depends on dataset size\n- More data = more steps needed\n- Monitor samples to avoid overtraining, stop when you get good enough likeness\n\n### Gradient Checkpointing\n- **Default**: True\n- Saves VRAM at cost of speed\n- Disable if you have plenty of VRAM\n\n### FP8 Base\n- **Default**: True\n- Uses FP8 precision for memory efficiency\n- Recommended for large models\n\n## 🐛 Troubleshooting\n\n### \"Dataset config not found\"\nMake sure the Dataset Config node executed successfully and check the output path.\n\n### \"VAE/T5/DiT path not found\"\nVerify all model paths are correct and files exist at those locations.\n\n### \"Caching failed\"\n- Check that dataset_config points to valid data\n- Ensure video/image files exist in specified directory\n- Verify caption files match your data files\n\n### \"Training failed\"\n- Ensure caching completed successfully first\n- Check that you have enough VRAM\n- Enable gradient checkpointing and FP8 if needed\n- Review the log output for specific errors\n\n### Sampling node not showing images\n- Make sure `folder_path` points to where samples are saved\n- Check that `auto_refresh` is enabled\n- Samples only appear after training generates them\n\n"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 47,
+      "type": "KepStringLiteral",
+      "pos": [
+        -2967.141516705814,
+        1798.8113636947521
+      ],
+      "size": [
+        413.64966925365775,
+        98.99330228617731
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyLiterals",
+        "ver": "bdddb08ca82d90d75d97b1d437a652e0284a32ac",
+        "Node name for S&R": "KepStringLiteral",
+        "aux_id": "M1kep/ComfyLiterals",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "String": true
+          }
+        }
+      },
+      "widgets_values": [
+        "Z:\\COMFY10\\COMFY11\\ComfyUI\\models\\diffusion_models\\qwen_image_fp8_e4m3fn.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 49,
+      "type": "KepStringLiteral",
+      "pos": [
+        -2467.7745101158353,
+        1797.0071079869274
+      ],
+      "size": [
+        452.94017613255085,
+        88
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            49,
+            63
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyLiterals",
+        "ver": "bdddb08ca82d90d75d97b1d437a652e0284a32ac",
+        "Node name for S&R": "KepStringLiteral",
+        "aux_id": "M1kep/ComfyLiterals",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "String": true
+          }
+        }
+      },
+      "widgets_values": [
+        "Z:\\COMFY10\\COMFY11\\ComfyUI\\models\\text_encoders\\qwen_2.5_vl_7b.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 48,
+      "type": "KepStringLiteral",
+      "pos": [
+        -1981.751126165841,
+        1791.8145511074288
+      ],
+      "size": [
+        413.64966925365775,
+        98.99330228617731
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            48,
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyLiterals",
+        "ver": "bdddb08ca82d90d75d97b1d437a652e0284a32ac",
+        "Node name for S&R": "KepStringLiteral",
+        "aux_id": "M1kep/ComfyLiterals",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "String": true
+          }
+        }
+      },
+      "widgets_values": [
+        "Z:\\COMFY10\\COMFY11\\ComfyUI\\models\\vae\\QwenVAE.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 63,
+      "type": "MusubiImageViewer",
+      "pos": [
+        -592.6108409399824,
+        1358.7207465813067
+      ],
+      "size": [
+        800.3625513514132,
+        1194.0482891832823
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MusubiImageViewer",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "folder_path": true,
+            "auto_refresh": true
+          }
+        }
+      },
+      "widgets_values": [
+        "Z:\\COMFY10\\COMFY11\\ComfyUI\\models\\loras\\sample",
+        true
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 55,
+      "type": "MusubiTrainingQWEN",
+      "pos": [
+        -1190.4724765947637,
+        1414.6980349709297
+      ],
+      "size": [
+        528.7869502106876,
+        962
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dataset_config",
+          "type": "STRING",
+          "widget": {
+            "name": "dataset_config"
+          },
+          "link": 70
+        },
+        {
+          "name": "vae_path",
+          "type": "STRING",
+          "widget": {
+            "name": "vae_path"
+          },
+          "link": 62
+        },
+        {
+          "name": "text_encoder_path",
+          "type": "STRING",
+          "widget": {
+            "name": "text_encoder_path"
+          },
+          "link": 63
+        },
+        {
+          "name": "dit_path",
+          "type": "STRING",
+          "widget": {
+            "name": "dit_path"
+          },
+          "link": 61
+        },
+        {
+          "name": "sample_prompts",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "sample_prompts"
+          },
+          "link": 67
+        }
+      ],
+      "outputs": [
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": [
+            71
+          ]
+        },
+        {
+          "name": "log",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "latest_sample",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MusubiTrainingQWEN",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "dataset_config": true,
+            "vae_path": true,
+            "text_encoder_path": true,
+            "dit_path": true,
+            "output_dir": true,
+            "output_name": true,
+            "learning_rate": true,
+            "network_dim": true,
+            "network_alpha": true,
+            "max_train_steps": true,
+            "save_every_n_steps": true,
+            "gradient_accumulation_steps": true,
+            "max_data_loader_n_workers": true,
+            "persistent_data_loader_workers": true,
+            "seed": true,
+            "optimizer_type": true,
+            "mixed_precision": true,
+            "gradient_checkpointing": true,
+            "fp8_base": true,
+            "fp8_vl": true,
+            "sdpa": true,
+            "weight_decay": true,
+            "max_grad_norm": true,
+            "lr_scheduler": true,
+            "lr_scheduler_power": true,
+            "lr_warmup_steps": true,
+            "timestep_sampling": true,
+            "discrete_flow_shift": true,
+            "sample_prompts": true,
+            "sample_every_n_steps": true,
+            "sample_every_n_epoch": true,
+            "save_state": true,
+            "blocks_to_swap": true,
+            "musubi_tuner_path": true,
+            "execute": true
+          }
+        }
+      },
+      "widgets_values": [
+        "dataset_config.toml",
+        "",
+        "",
+        "",
+        "Z:\\COMFY10\\COMFY11\\ComfyUI\\models\\loras",
+        "my_qwen_lora",
+        0.0002,
+        32,
+        32,
+        600,
+        100,
+        1,
+        2,
+        true,
+        972042238,
+        "randomize",
+        "adamw8bit",
+        "bf16",
+        true,
+        true,
+        true,
+        true,
+        0.01,
+        1,
+        "constant",
+        1,
+        0,
+        "uniform",
+        2.2,
+        "Z:\\COMFY10\\COMFY11\\ComfyUI\\models\\loras\\sample\\prompt_file.txt",
+        100,
+        202,
+        false,
+        "",
+        0,
+        "",
+        true
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    }
+  ],
+  "links": [
+    [
+      48,
+      48,
+      0,
+      51,
+      1,
+      "STRING"
+    ],
+    [
+      49,
+      49,
+      0,
+      51,
+      2,
+      "STRING"
+    ],
+    [
+      51,
+      51,
+      0,
+      36,
+      0,
+      "STRING"
+    ],
+    [
+      61,
+      47,
+      0,
+      55,
+      3,
+      "STRING"
+    ],
+    [
+      62,
+      48,
+      0,
+      55,
+      1,
+      "STRING"
+    ],
+    [
+      63,
+      49,
+      0,
+      55,
+      2,
+      "STRING"
+    ],
+    [
+      67,
+      57,
+      0,
+      55,
+      4,
+      "STRING"
+    ],
+    [
+      69,
+      61,
+      0,
+      51,
+      0,
+      "STRING"
+    ],
+    [
+      70,
+      61,
+      0,
+      55,
+      0,
+      "STRING"
+    ],
+    [
+      71,
+      55,
+      0,
+      37,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "Training",
+      "bounding": [
+        -1287.4206560576774,
+        1307.819675252301,
+        1534.1300241849262,
+        1249.304540243031
+      ],
+      "color": "#208ccf",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Models for training",
+      "bounding": [
+        -3006.891538896572,
+        1650.7558922974385,
+        1474.4659508567695,
+        283.50136380031313
+      ],
+      "color": "#ca2f2f",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "SET BEFORE TRAINING",
+      "bounding": [
+        -3016.0244109809837,
+        1986.7608171856702,
+        1707.5788246382253,
+        565.229156799429
+      ],
+      "color": "#b846e2",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0610764609500123,
+      "offset": [
+        2666.7765656165056,
+        -1513.8804332862271
+      ]
+    },
+    "frontendVersion": "1.28.8",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
