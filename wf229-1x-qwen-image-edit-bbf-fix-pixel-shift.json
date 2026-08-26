@@ -1879,7 +1879,7 @@
         }
       },
       "widgets_values": [
-        "wf229-1x-qwen-image-edit/%date:yyyyMMdd%-%date:hhmm%-wf229-1x-qie-1"
+        "wf229-1x-qie/wf229-%date:yyyyMMdd%-%date:hhmmss%-1"
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -2240,7 +2240,7 @@
         }
       },
       "widgets_values": [
-        "wf229-1x-qwen-image-edit/%date:yyyyMMdd%-%date:hhmm%-wf229-1x-qie-2"
+        "wf229-1x-qie/wf229-%date:yyyyMMdd%-%date:hhmmss%-2"
       ]
     },
     {

@@ -2630,7 +2630,7 @@
         }
       },
       "widgets_values": [
-        "wf230-qie2511/wf230-%date:yyyy-MM-dd%-%date:hhmmss%-1"
+        "wf230-2x-qie/wf230-%date:yyyyMMdd%-%date:hhmmss%-1"
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -2690,7 +2690,7 @@
         }
       },
       "widgets_values": [
-        "wf230-qie2511/wf230-%date:yyyy-MM-dd%-%date:hhmmss%-3"
+        "wf230-2x-qie/wf230-%date:yyyyMMdd%-%date:hhmmss%-3"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -2859,7 +2859,7 @@
         }
       },
       "widgets_values": [
-        "wf230-qie2511/wf230-%date:yyyy-MM-dd%-%date:hhmmss%-2"
+        "wf230-2x-qie/wf230-%date:yyyyMMdd%-%date:hhmmss%-2"
       ]
     },
     {
