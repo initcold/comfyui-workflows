@@ -1,0 +1,378 @@
+{
+  "id": "59a9e80d-39de-4081-9784-03fce2a0e211",
+  "revision": 0,
+  "last_node_id": 17,
+  "last_link_id": 16,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        857.263108223739,
+        407.50067615095236
+      ],
+      "size": [
+        329.99382629808724,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "ImageScaleToTotalPixels",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "type": "DepthAnything_V3",
+      "pos": [
+        1295.8804765276182,
+        338.9953236619417
+      ],
+      "size": [
+        293.759765625,
+        330
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "da3_model",
+          "type": "DA3MODEL",
+          "link": 13
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        },
+        {
+          "name": "camera_params",
+          "shape": 7,
+          "type": "CAMERA_PARAMS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "depth",
+          "type": "IMAGE",
+          "links": [
+            15,
+            16
+          ]
+        },
+        {
+          "name": "confidence",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "resized_rgb_image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "ray_origin",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "ray_direction",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "extrinsics_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "intrinsics_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "sky_mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "extrinsics",
+          "type": "EXTRINSICS",
+          "links": null
+        },
+        {
+          "name": "intrinsics",
+          "type": "INTRINSICS",
+          "links": null
+        },
+        {
+          "name": "gaussian_ply_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-depthanythingv3",
+        "ver": "0.0.11",
+        "Node name for S&R": "DepthAnything_V3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "V2-Style",
+        "resize",
+        false,
+        false
+      ]
+    },
+    {
+      "id": 13,
+      "type": "DownloadAndLoadDepthAnythingV3Model",
+      "pos": [
+        857.9870716235387,
+        263.83499908672286
+      ],
+      "size": [
+        336.491796875,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "da3_model",
+          "type": "DA3MODEL",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-depthanythingv3",
+        "ver": "0.0.11",
+        "Node name for S&R": "DownloadAndLoadDepthAnythingV3Model",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "da3_base.safetensors",
+        "auto"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": [
+        201.00000000000045,
+        115.18057876988507
+      ],
+      "size": [
+        591.1706161551328,
+        796.5457703436773
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "wf205-2025-12-20-1041_00001_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PreviewImage",
+      "pos": [
+        1687.6686316222315,
+        197.64067544405918
+      ],
+      "size": [
+        404.15192176023584,
+        412.825865086176
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [],
+      "title": "da3_Base",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "SaveImage",
+      "pos": [
+        1665.4365999999986,
+        703.8660999999987
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 16
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.7.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      12,
+      15,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      13,
+      0,
+      12,
+      0,
+      "DA3MODEL"
+    ],
+    [
+      14,
+      11,
+      0,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      15,
+      12,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      16,
+      12,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8264462809917354,
+      "offset": [
+        -417.9265999999998,
+        -12.95609999999997
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "frontendVersion": "1.35.9",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
